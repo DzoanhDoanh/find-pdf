@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF API Finder</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero">
+        <p class="eyebrow">Network scanner</p>
+        <h1>PDF API Finder</h1>
+        <p class="description">
+          Dán URL website, tool sẽ mở trang bằng trình duyệt ẩn, bắt network request và lọc ra các link/API liên quan đến PDF.
+        </p>
+      </section>
+
+      <section class="card">
+        <form id="scanForm" class="form">
+          <label for="urlInput">Website URL</label>
+          <div class="inputRow">
+            <input
+              id="urlInput"
+              name="url"
+              type="url"
+              placeholder="https://example.com"
+              required
+            />
+            <button id="scanButton" type="submit">Scan</button>
+          </div>
+          <p class="hint">Tool tìm URL chứa <code>.pdf</code> hoặc response có <code>application/pdf</code>.</p>
+        </form>
+      </section>
+
+      <section id="status" class="status hidden"></section>
+
+      <section id="resultsCard" class="card hidden">
+        <div class="resultHeader">
+          <div>
+            <p class="eyebrow">Results</p>
+            <h2 id="resultTitle">0 link PDF</h2>
+          </div>
+          <div class="actions">
+            <button id="copyAllButton" type="button" class="secondary">Copy tất cả</button>
+            <button id="downloadButton" type="button" class="secondary">Tải .txt</button>
+          </div>
+        </div>
+        <div id="results" class="results"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
