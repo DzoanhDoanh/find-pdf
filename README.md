@@ -28,6 +28,7 @@ docker run -p 3000:3000 pdf-api-finder
 - Chọn deploy bằng Dockerfile.
 - Port app: `3000` hoặc dùng biến môi trường `PORT` do nền tảng cung cấp.
 - Start command đã có trong Dockerfile: `npm start`.
+- Nếu Playwright được update, Docker image trong `Dockerfile` phải cùng version với package `playwright` trong `package-lock.json`.
 
 ## API
 
